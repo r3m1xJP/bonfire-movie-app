@@ -1,0 +1,16 @@
+{
+    "development": {
+      "username": "root",
+      "password": "bonfire",
+      "database": "MovieApp",
+      "host": "localhost",
+      "dialect": "mysql"
+    },
+    "demo": {
+      "username": "root",
+      "password": "bonfire",
+      "database": "MovieApp",
+      "host": "db",
+      "dialect": "mysql"
+    }
+}

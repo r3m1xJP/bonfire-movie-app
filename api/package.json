@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "bonfire movie app api",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Johnson Phanyaseng",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "hapi": "^16.6.2",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.15.0"
+  }
+}
