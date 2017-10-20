@@ -1,0 +1,28 @@
+<form class="search-form">
+    <mat-form-field class="full-width">
+        <mat-icon matPrefix class="icon-prefix">search</mat-icon>
+        <input type="text" matInput placeholder="Search movies..." #searchQuery name="search-query" [(ngModel)]="query"
+               shouldPlaceholderFloat="false" (keyup.enter)="search()" />
+    </mat-form-field>
+</form>
+
+<mat-spinner *ngIf="loading" class="center"></mat-spinner>
+
+<div class="movie-list">
+    <mat-card *ngFor="let movie of movies" class="movie-card">
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>{{movie.release_date}}</mat-card-subtitle>
+        <mat-card-content>
+            <div class="overview">{{movie.overview}}</div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="flex">
+                <span class="fill-remaining-space"></span>
+                <button mat-button [matMenuTriggerFor]="menu">Add To Collection</button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item *ngFor="let collection of collections" (click)="addToCollection(collection.id, movie)">{{collection.Name}}</button>
+                </mat-menu>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>

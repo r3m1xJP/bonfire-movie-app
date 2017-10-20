@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <span>Bonfire - Movie App</span>
+    <span class="fill-remaining-space"></span>
+    <div *ngIf="isUserAuthorized">
+        <span>Hi {{currentUser.FirstName}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="/account">
+                <mat-icon>settings</mat-icon>
+                <span>My Account</span>
+            </a>
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>arrow_back</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
+<mat-toolbar color="accent" *ngIf="isUserAuthorized">
+    <span class="fill-remaining-space"></span>
+    <a mat-button routerLink="/">Home</a>
+    <a mat-button routerLink="/movies">Search Movies</a>
+    <a mat-button routerLink="/collections">My Collections</a>
+    <span class="fill-remaining-space"></span>
+</mat-toolbar>    
+<router-outlet></router-outlet>

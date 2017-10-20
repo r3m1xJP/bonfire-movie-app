@@ -1,0 +1,17 @@
+<h3>Now Playing Movies</h3>
+
+<div class="movie-list">
+    <mat-card *ngFor="let movie of movies" class="movie-card">
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>{{movie.release_date}}</mat-card-subtitle>
+        <mat-card-content>
+            <div class="overview">{{movie.overview}}</div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="flex">
+                <span class="fill-remaining-space"></span>
+                <button mat-button>Add To Collection</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>

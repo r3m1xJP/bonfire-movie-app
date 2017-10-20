@@ -1,0 +1,25 @@
+<div class="content">
+    <mat-card class="login">
+        <mat-card-header>
+            <mat-card-title class="title full-width">Login</mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="login-form" (submit)="login()">
+                <mat-form-field class="full-width">
+                    <input matInput #username name="username" placeholder="Username" [formControl]="usernameFormControl" [(ngModel)]="user.username">
+                    <mat-error *ngIf="usernameFormControl.hasError('required')">
+                        Username is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input matInput #paassword name="password" placeholder="Password" [formControl]="passwordFormControl" [(ngModel)]="user.password">
+                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="full-width">Login</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

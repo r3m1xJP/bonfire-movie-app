@@ -1,0 +1,22 @@
+<mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Search Movies...">
+        <div class="content">
+            <search-movie [collections]="collections" (addMovieToCollection)="addMovieToCollection($event)"></search-movie>
+        </div>
+    </mat-tab>
+    <mat-tab label="Now Playing">
+        <div class="content">
+            <now-playing></now-playing>
+        </div>
+    </mat-tab>
+    <mat-tab label="Coming Soon">
+        <div class="content">
+            <coming-soon></coming-soon>
+        </div>
+    </mat-tab>
+    <mat-tab label="Top Rated">
+        <div class="content">
+            <top-rated></top-rated>
+        </div>
+    </mat-tab>
+</mat-tab-group>

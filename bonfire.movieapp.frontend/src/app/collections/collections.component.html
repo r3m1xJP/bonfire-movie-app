@@ -1,0 +1,25 @@
+<!-- <div class="content">
+    <div class="button-wrapper">
+    </div>
+    <mat-card *ngFor="let collection of collections" class="collection-card">
+        <mat-card-title>{{collection.Name}}</mat-card-title>
+        <mat-card-subtitle>Movies: {{collection.Movies.length}}</mat-card-subtitle>
+        <mat-card-content>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="flex">
+                <span class="fill-remaining-space"></span>
+                <button mat-button color="warn">Delete</button>
+                <button mat-button>Edit</button>
+                <button mat-button>View Movies</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div> -->
+<mat-tab-group mat-stretch-tabs>
+    <mat-tab *ngFor="let collection of collections" label="{{collection.Name}}">
+        <div class="content">
+            <movie-list [collection]="collection"></movie-list>
+        </div>
+    </mat-tab>
+</mat-tab-group>
